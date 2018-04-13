@@ -29,6 +29,7 @@
 
 - (void)installAsDelegateForView:(NSView *)view
 {
+    Q_UNUSED(view)
     // ### ??? !!!
 
 //    _qtDelegate = view.delegate;

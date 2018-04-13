@@ -11,7 +11,7 @@
 #import <AppKit/AppKit.h>
 #import <QtGui/QtGui>
 
-@interface QTouchBarDelegate: NSResponder <NSTouchBarDelegate, NSApplicationDelegate, NSWindowDelegate>
+@interface QTouchBarDelegate: NSResponder <NSTouchBarDelegate, NSTouchBarProvider, NSApplicationDelegate, NSWindowDelegate>
 
 @property (strong) NSObject *qtDelegate;
 @property (weak) NSObject *target;
