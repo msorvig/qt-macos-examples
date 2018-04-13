@@ -1,6 +1,6 @@
 TEMPLATE = subdirs
 
-# Native windows
+# Native window embedding
 SUBDIRS += \
     accessoryview \
     fullsizecontentview \
