@@ -7,3 +7,7 @@ SUBDIRS += \
     hudwindow \
     popover \
     visualeffects
+
+# Touch Bar
+SUBDIRS += \
+    touchbar
