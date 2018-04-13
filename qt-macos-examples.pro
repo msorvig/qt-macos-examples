@@ -11,3 +11,9 @@ SUBDIRS += \
 # Touch Bar
 SUBDIRS += \
     touchbar
+
+# Metal
+SUBDIRS += \
+
+# QSurface::MetalSurface is still pending
+#    metalwindow \
