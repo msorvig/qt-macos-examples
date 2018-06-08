@@ -73,7 +73,7 @@ int main(int argc, char **argv)
     QGuiApplication app(argc, argv);
 
     MetalWindow metalWindow;
-    metalWindow.setTitle("QSurface::MetalSurface");
+    metalWindow.setTitle("QWindow with QSurface::MetalSurface");
     metalWindow.resize(640, 480);
     metalWindow.show();
 
