@@ -49,7 +49,7 @@
 
 #include "qtouchbar.h"
 
-@interface ExampleTouchBar: QTouchBarDelegate
+@interface ExampleTouchBar: QTouchBarDelegate <NSTouchBarDelegate>
 
 @end
 
