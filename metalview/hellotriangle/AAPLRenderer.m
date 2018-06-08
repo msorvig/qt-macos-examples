@@ -81,6 +81,8 @@ Implementation of renderer class which perfoms Metal setup and per frame renderi
 /// Called whenever view changes orientation or is resized
 - (void)mtkView:(nonnull MTKView *)view drawableSizeWillChange:(CGSize)size
 {
+    (void)view; //unused
+
     // Save the size of the drawable as we'll pass these
     //   values to our vertex shader when we draw
     _viewportSize.x = size.width;
