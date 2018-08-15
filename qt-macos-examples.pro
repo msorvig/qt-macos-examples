@@ -8,6 +8,10 @@ SUBDIRS += \
     popover \
     visualeffects
 
+# Native dialogs
+SUBDIRS += \
+    filedialog
+
 # Touch Bar
 SUBDIRS += \
     touchbar
