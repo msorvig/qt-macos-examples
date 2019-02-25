@@ -48,6 +48,7 @@
 #import <AppKit/AppKit.h>
 
 #include "qtouchbar.h"
+#include <qtcontent.h>
 
 @interface ExampleTouchBar: QTouchBarDelegate <NSTouchBarDelegate>
 
@@ -58,6 +59,7 @@
 // Create identifiers for two button items.
 static NSTouchBarItemIdentifier Button1Identifier = @"com.myapp.Button1Identifier";
 static NSTouchBarItemIdentifier Button2Identifier = @"com.myapp.Button2Identifier";
+static NSTouchBarItemIdentifier QtItemIdentifier = @"com.myapp.QtItemIdentifier";
 
 - (NSTouchBar *)makeTouchBar
 {
@@ -65,12 +67,17 @@ static NSTouchBarItemIdentifier Button2Identifier = @"com.myapp.Button2Identifie
     NSTouchBar *bar = [[NSTouchBar alloc] init];
     bar.delegate = self;
 
-    // Add touch bar items: first, the character (emoji) picker, followed
-    // by two buttons. Note that no further handling of the character picker
-    // is needed: its character events are automatically routed to any active
-    // text edit Button actions handlers are set up in makeItemForIdentifier below.
-    bar.defaultItemIdentifiers = @[NSTouchBarItemIdentifierCharacterPicker,
-                                   Button1Identifier, Button2Identifier];
+    // Add touch bar items:
+    bar.defaultItemIdentifiers = @[
+        // The character (emoji) picker. Note that no further handling of the character
+        // picker is needed: its character events are automatically routed to any active
+        // text edit
+        NSTouchBarItemIdentifierCharacterPicker,
+        // Two buttons. Button actions handlers are set up in makeItemForIdentifier below.
+        Button1Identifier, Button2Identifier,
+        // A custom Qt-based touch-bar item
+        QtItemIdentifier
+    ];
 
     return bar;
 }
@@ -88,6 +95,9 @@ static NSTouchBarItemIdentifier Button2Identifier = @"com.myapp.Button2Identifie
     } else if ([identifier isEqualToString:Button2Identifier]) {
         QString title = QLatin1String("Button 2");
         item.view = [NSButton buttonWithTitle:title.toNSString() target:self action:@selector(button2Pressed)];
+    } else if ([identifier isEqualToString:QtItemIdentifier]) {
+        QWindow *window = new CheckeredWindow();
+        item.view = (__bridge NSView *)reinterpret_cast<void *>(window->winId());
     } else {
         item = nil;
     }

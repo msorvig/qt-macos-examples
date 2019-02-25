@@ -1,3 +1,5 @@
+include (../qtcontent/qtcontent.pri)
+
 HEADERS += \
     qtouchbar.h
 
