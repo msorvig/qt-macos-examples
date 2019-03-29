@@ -46,6 +46,8 @@ Two examples demonstrate how to integrate Metal rendering with Qt:
 
     metalview/                MTKView controlled by QWindow
     metalwindow/              QWindow subclass with QSurface::MetalSurface
+    metalwidget/              QWidget::createWindowContainer() with Metal QWindow
+    metalquick/               Metal window overlaid on Qt Quick content
 
 In the metalview example, QWindow::fromWinId() is used to "wrap"
 and control a native MKMetalView.
