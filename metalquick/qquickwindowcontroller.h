@@ -44,10 +44,10 @@
 // integration can use it.
 
 #include <QtQuick/QQuickItem>
+#include <QtGui/QWindow>
 
 QT_BEGIN_NAMESPACE
 
-class QWindow;
 class QQuickWindowControllerChangeListener;
 class QQuickWindowController : public QQuickItem
 {
