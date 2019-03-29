@@ -56,7 +56,7 @@
 
     This example shows how to make a QWindow use the entire visual window area
     with overlaid native window controls. This is done by configuring a native
-    NSWindow with the NSFullSizeContentViewWindowMask style mask, hiding the
+    NSWindow with the NSWindowStyleMaskFullSizeContentView style mask, hiding the
     window title bar, and finally setting the contentView for the NSwindow to
     be the QWindows's NSView.
 

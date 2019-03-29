@@ -73,8 +73,8 @@ int main(int argc, char **argv)
     NSRect frame = NSMakeRect(200, 200, 640, 300);
     NSWindow *window =
         [[NSWindow alloc] initWithContentRect:frame
-                                     styleMask:NSTitledWindowMask | NSClosableWindowMask |
-                                               NSMiniaturizableWindowMask | NSResizableWindowMask
+                                     styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable |
+                                               NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable
                                        backing:NSBackingStoreBuffered
                                          defer:NO];
     window.contentMinSize = NSMakeSize(640, 200);

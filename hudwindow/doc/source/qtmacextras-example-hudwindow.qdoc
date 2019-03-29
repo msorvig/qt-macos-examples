@@ -55,7 +55,7 @@
     \brief Demonstrates how to embed Qt application content in a HUD window
 
     This example shows how to embed a QWindow into a native window that
-    has NSHUDWindowMask set.
+    has NSWindowStyleMaskHUDWindow set.
 
     \include examples-run.qdocinc
 

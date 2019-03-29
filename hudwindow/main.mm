@@ -56,14 +56,14 @@ int main(int argc, char **argv)
 {
     QGuiApplication app(argc, argv);
 
-    // Create and configure the native window, using NSHUDWindowMask
-    // and NSUtilityWindowMask to give it a HUD look.
+    // Create and configure the native window, using NSWindowStyleMaskHUDWindow
+    // and NSWindowStyleMaskUtilityWindow to give it a HUD look.
     NSRect frame = NSMakeRect(40, 40, 320, 200);
     NSWindow *window =
         [[NSPanel alloc] initWithContentRect:frame
-                                   styleMask:NSTitledWindowMask | NSClosableWindowMask |
-                                             NSMiniaturizableWindowMask | NSResizableWindowMask |
-                                             NSHUDWindowMask | NSUtilityWindowMask
+                                   styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable |
+                                             NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable |
+                                             NSWindowStyleMaskHUDWindow | NSWindowStyleMaskUtilityWindow
                                      backing:NSBackingStoreBuffered
                                        defer:NO];
     window.title = @"HUD Window";

@@ -56,21 +56,21 @@ int main(int argc, char **argv)
 {
     QGuiApplication app(argc, argv);
 
-    // Create and configure a native window. Specify the NSFullSizeContentViewWindowMask
+    // Create and configure a native window. Specify the NSWindowStyleMaskFullSizeContentView
     // flag to make its content view cover the entire window area.
     NSRect frame = NSMakeRect(200, 200, 320, 200);
     NSWindow *window =
         [[NSWindow alloc] initWithContentRect:frame
-                                    styleMask:NSTitledWindowMask | NSClosableWindowMask |
-                                              NSMiniaturizableWindowMask | NSResizableWindowMask |
-                                              NSFullSizeContentViewWindowMask
+                                    styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable |
+                                              NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable |
+                                              NSWindowStyleMaskFullSizeContentView
                                       backing:NSBackingStoreBuffered
                                         defer:NO];
 
     // Hide the title bar
     window.titlebarAppearsTransparent = YES;
     window.movableByWindowBackground = YES;
-
+    
     // Create Qt content window, get its native view, and
     // set it as the content view for the window.
     std::unique_ptr<QWindow> checkeredWindow(new CheckeredWindow());
