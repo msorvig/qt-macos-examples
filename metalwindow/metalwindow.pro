@@ -7,7 +7,7 @@ OBJECTIVE_SOURCES += hellotriangle/AAPLRenderer.mm
 
 # hellotriangle example shaders
 hellotriangleshaders_air.target = hellotriangleshaders.air
-hellotriangleshaders_air.commands = xcrun -sdk macosx metal hellotriangle/AAPLShaders.metal -o hellotriangleshaders.air
+hellotriangleshaders_air.commands = xcrun -sdk macosx metal -c hellotriangle/AAPLShaders.metal -o hellotriangleshaders.air
 hellotriangleshaders_lib.target = hellotriangleshaders.metallib
 hellotriangleshaders_lib.commands = xcrun -sdk macosx metallib hellotriangleshaders.air -o hellotriangleshaders.metallib
 hellotriangleshaders_lib.depends = hellotriangleshaders_air
