@@ -18,7 +18,7 @@ SUBDIRS += \
 
 # Metal
 SUBDIRS += \
-    metalview
-
-# QSurface::MetalSurface is still pending
-#    metalwindow \
+    metalview \
+    metalwindow \
+    metalwidget \
+    metalquick
