@@ -5,7 +5,7 @@ This repository contains Qt usage examples that are spesific
 to Qt for macOS. This includes exmples for working with native
 window types, the MacBook Pro Touch bar, and the Metal graphcis API.
 
-The target Qt branch for the examples contained here is the "dev"
+The target Qt branch for the examples contained here is the "5.15"
 branch. The examples may use features or rely on bugfixes which
 are not present in the released version of Qt.
 
